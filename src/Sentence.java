@@ -1,3 +1,5 @@
+import java.util.concurrent.LinkedBlockingDeque;
+
 public class Sentence {
 
 	private String currSent;
@@ -20,18 +22,19 @@ public class Sentence {
 	 * Postcondition: the current sentence if not modified.
 	 */
 	public int findNthTime(String str, int n) {
-		/* part a */
-		int a = 0, x = 0, k = 0;
-		int sentI = currSent.indexOf(str);
-		String s2 = "", s3 = "";
-		while (x <= n){
-			if (sentI < 0){
+		int a = 0;
+		String s2 = "";
+		if (currSent.indexOf(str) < 0){
+			return -1;
+		}
+		for (int i = 0; i <= n; i++) {
+			a = currSent.indexOf(str, a);
+			
+			if (a < 0){
 				return -1;
 			}
-			s3 = currSent.substring(sentI);
-			s2 += s3;
-			x++;
 		}
+		return a;
 	}
 /*
 	*//** Modifies the current sentence by replacing the nth occurrence of str with repl
