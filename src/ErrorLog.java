@@ -1,20 +1,18 @@
-package com.company;
-
-public class ErrorLog {
+/*public class ErrorLog {
 
 	private String machineId;
 	private String description;
-	
-	/** Precondition: message is a valid Error log entry */
+
+	*//** Precondition: message is a valid Error log entry *//*
 	public ErrorLog(String message) {
-		/* part a */
+		*//* part a *//*
 	}
 
-	/** Returns true if the description in this error log entry
+	*//** Returns true if the description in this error log entry
 	 * contains keyword; false otherwise.
-	 */
+	 *//*
 	public boolean containsKey(String keyword) {
-		/* part b */
+		*//* part b *//*
 	}
 	
 	public String getMachineId() { return machineId;}
@@ -38,4 +36,4 @@ public class ErrorLog {
 
 	}
 
-}
+}*/
