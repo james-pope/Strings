@@ -23,13 +23,11 @@ public class Sentence {
 	 */
 	public int findNthTime(String str, int n) {
 		int a = 0;
-		String s2 = "";
 		if (currSent.indexOf(str) < 0){
 			return -1;
 		}
 		for (int i = 0; i <= n; i++) {
 			a = currSent.indexOf(str, a + 1);
-
 			if (a < 0){
 				return -1;
 			}
