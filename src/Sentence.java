@@ -76,13 +76,13 @@ public class Sentence {
 
 		Sentence sentence4 = new Sentence("aaaa");
 		//sentence4.replaceNthTime("aa", 1, "xx");
-		System.out.println(sentence4);
+		//System.out.println(sentence4);
 
 		Sentence sentence5 = new Sentence("aaaa");
 		//sentence5.replaceNthTime("aa", 2, "bbb");
-		System.out.println(sentence5);
+		//System.out.println(sentence5);
 
-		Sentence sentence6 = new Sentence("A cat ate late.");
+		//Sentence sentence6 = new Sentence("A cat ate late.");
 		//System.out.println(sentence6.findLastTime("at"));
 		//System.out.println(sentence6.findLastTime("cat"));
 		//System.out.println(sentence6.findLastTime("bat"));
