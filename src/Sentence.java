@@ -59,7 +59,7 @@ public class Sentence {
 	 */
 	public int findLastTime(String str) {
 		// part c - you must call findNthTime here *//*
-		int x = 0, a = 0;
+		int x = 0, a = 1;
 		while (a != 0){
 			a = currSent.indexOf(str, a + 1);
 			if (a < 0){
