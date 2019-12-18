@@ -50,17 +50,21 @@ public class Sentence {
 			s1 += s2;
 		}
 		System.out.println(s1);
-
 	}
 /*
 	*//** Returns the index of the last occurrence of str in the current sentence:
 	 * returns -1 if str is not found.
 	 * Precondition:  str.length() > 0
 	 * Postcondition: the current sentence is not modified.
-	 *//*
+	 */
 	public int findLastTime(String str) {
-		*//* part c - you must call findNthTime here *//*
-	}*/
+		// part c - you must call findNthTime here *//*
+		int x = 0, a = 0;
+		while (a != 0){
+			a = currSent.indexOf(str, a + 1);
+		}
+
+	}
 
 	public static void main(String[] args) {
 		Sentence sentence1 = new Sentence("A cat ate late.");
@@ -85,16 +89,16 @@ public class Sentence {
 
 		Sentence sentence4 = new Sentence("aaaa");
 		sentence4.replaceNthTime("aa", 1, "xx");
-		//System.out.println(sentence4);
+		System.out.println(sentence4);
 
 		Sentence sentence5 = new Sentence("aaaa");
 		sentence5.replaceNthTime("aa", 2, "bbb");
-		//System.out.println(sentence5);
+		System.out.println(sentence5);
 
-		//Sentence sentence6 = new Sentence("A cat ate late.");
-		//System.out.println(sentence6.findLastTime("at"));
-		//System.out.println(sentence6.findLastTime("cat"));
-		//System.out.println(sentence6.findLastTime("bat"));
+		Sentence sentence6 = new Sentence("A cat ate late.");
+		System.out.println(sentence6.findLastTime("at"));
+		System.out.println(sentence6.findLastTime("cat"));
+		System.out.println(sentence6.findLastTime("bat"));
 	}
 
 
