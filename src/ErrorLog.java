@@ -19,13 +19,29 @@ public class ErrorLog {
 			return false;
 		}
 		int before = s.indexOf(keyword);
-		if (before == 0){
-			
-		}
 		int after = s.indexOf(keyword) + keyword.length();
-		char b = s.charAt(before - 1);
-		char a = s.charAt(after);
-
+		if (before == 0) {
+			String z = s.substring(after, after + 1);
+			if (z.equals("") || z.equals(" ")) {
+				return true;
+			}else{
+				return false;
+			}
+		}
+		if (s.length() == after){
+			String t = s.substring(before - 1, before);
+			if (t.equals(" ")){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		String a = s.substring(after, after + 1);
+		String b = s.substring(before - 1, before);
+		if (b.equals(" ") && a.equals("") || a.equals(" ")){
+			return true;
+		}
+	return false;
 	}
 	
 	public String getMachineId() { return machineId;}
@@ -38,8 +54,6 @@ public class ErrorLog {
 		ErrorLog er4 = new ErrorLog("SERVER15:read error on disk DSK7");
 		ErrorLog er5 = new ErrorLog("SERVER22:write error on disk");
 		ErrorLog er6 = new ErrorLog("Webserver:error on /dev/disk");
-		System.out.println(er1.getMachineId());
-		System.out.println(er1.getDescription());
 		
 		System.out.println("message 1 " + er1.containsKey("disk"));
 		System.out.println("message 2 " + er2.containsKey("disk"));
@@ -52,3 +66,11 @@ public class ErrorLog {
 	}
 
 }
+/* Output
+message 1 false
+message 2 true
+message 3 false
+message 4 true
+message 5 true
+message 6 false
+ */
