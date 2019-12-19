@@ -63,9 +63,9 @@ public class Sentence {
 		while (a != 0){
 			a = currSent.indexOf(str, a + 1);
 			if (a < 0){
-				return -1;
+				break;
 			}
-			x =a;
+			x++;
 		}
 		int n = findNthTime(str, x);
 		return n;
