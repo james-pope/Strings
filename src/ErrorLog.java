@@ -1,18 +1,31 @@
-/*public class ErrorLog {
+public class ErrorLog {
 
 	private String machineId;
 	private String description;
 
-	*//** Precondition: message is a valid Error log entry *//*
+	//** Precondition: message is a valid Error log entry *//*
 	public ErrorLog(String message) {
-		*//* part a *//*
+		machineId = message.substring(0, message.indexOf(":"));
+		description = message.substring(machineId.length()+1);
 	}
 
-	*//** Returns true if the description in this error log entry
-	 * contains keyword; false otherwise.
-	 *//*
+	//** Returns true if the description in this error log entry
+	 //contains keyword; false otherwise.
+	 //*
 	public boolean containsKey(String keyword) {
-		*//* part b *//*
+		//part b
+		String s = getDescription();
+		if (!s.contains(keyword)){
+			return false;
+		}
+		int before = s.indexOf(keyword);
+		if (before == 0){
+			
+		}
+		int after = s.indexOf(keyword) + keyword.length();
+		char b = s.charAt(before - 1);
+		char a = s.charAt(after);
+
 	}
 	
 	public String getMachineId() { return machineId;}
@@ -25,6 +38,8 @@
 		ErrorLog er4 = new ErrorLog("SERVER15:read error on disk DSK7");
 		ErrorLog er5 = new ErrorLog("SERVER22:write error on disk");
 		ErrorLog er6 = new ErrorLog("Webserver:error on /dev/disk");
+		System.out.println(er1.getMachineId());
+		System.out.println(er1.getDescription());
 		
 		System.out.println("message 1 " + er1.containsKey("disk"));
 		System.out.println("message 2 " + er2.containsKey("disk"));
@@ -32,8 +47,8 @@
 		System.out.println("message 4 " + er4.containsKey("disk"));
 		System.out.println("message 5 " + er5.containsKey("disk"));
 		System.out.println("message 6 " + er6.containsKey("disk"));
-		
+
 
 	}
 
-}*/
+}
